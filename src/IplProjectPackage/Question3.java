@@ -31,7 +31,7 @@ public class Question3 {
 
          }
         System.out.println("---------------------------------------------------------------------------------");
-        System.out.println("for the year 2016 total extra runs given conceded per team");
+        System.out.println("for the year 2016 total extra runs given by");
         for(String s:hm.keySet())
         {
             System.out.println(s+"  --  "+hm.get(s));

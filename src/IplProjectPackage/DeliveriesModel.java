@@ -3,18 +3,18 @@ package IplProjectPackage;
 
 public class DeliveriesModel
 {
-    String Del_match_id;
-    String innings;
-    String batting_teams;
-    String bowling_teams;
-    String over;
-    String ball;
+    private String Del_match_id;
+   private String innings;
+    private String batting_teams;
+    private String bowling_teams;
+    private String over;
+    private String ball;
 
-    String batsman;
-    String non_striker;
-    String bowler;
-    String extra_runs;
-    String total_runs;
+    private String batsman;
+    private String non_striker;
+    private String bowler;
+    private String extra_runs;
+    private String total_runs;
 
     public String getDel_match_idMatch_id() {
         return Del_match_id;
