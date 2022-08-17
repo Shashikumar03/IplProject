@@ -3,8 +3,8 @@ package IplProjectPackage;
 
 public class MatchesModel
 {
-    String match_id;
-    String season;
+    private String match_id;
+     private String season;
 
     public String getMatch_id() {
         return match_id;
@@ -126,19 +126,19 @@ public class MatchesModel
         this.venue = venue;
     }
 
-    String city;
-    String date;
-    String team1;
-    String team2;
-    String toss_winner;
-    String toss_decision;
-    String result;
-    String dl_applied;
-    String winner;
-    String win_by_runs;
-    String win_by_wickets;
-    String player_of_match;
-    String venue;
+    private String city;
+    private String date;
+    private String team1;
+    private  String team2;
+    private String toss_winner;
+    private  String toss_decision;
+    private String result;
+    private String dl_applied;
+    private String winner;
+    private String win_by_runs;
+    private String win_by_wickets;
+    private String player_of_match;
+    private String venue;
 
 
 }
