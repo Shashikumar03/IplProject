@@ -6,32 +6,35 @@ import java.util.ArrayList;
 
 public class Main
 {
-    static MatchesModel matchesModel= new MatchesModel();
+    //static MatchesModel matchesModel= new MatchesModel();
 
-    static DeliveriesModel dm= new DeliveriesModel();
+    //static DeliveriesModel deliveryModel= new DeliveriesModel();
     public static void main(String[] args)
     {
 
-        ArrayList<MatchesModel> al= enterTheDatafromMatch();
+        ArrayList<MatchesModel> match_al= enterTheDatafromMatch();
         Question1 q1= new Question1();
-        q1.totalMatchPalyed(al);
+        q1.totalMatchPalyed(match_al);
 
 
         Question2 q2= new Question2();
-        q2.totalMatchWon(al);
+        q2.totalMatchWon(match_al);
 
 
 
+        ArrayList<DeliveriesModel> deliver_al=enterTheDatafromDeliveries();
+        Question3 q3= new Question3();
+        q3.ExtraRuns(match_al, deliver_al);
 
-
-
+        Question4 q4=new Question4();
+        q4.topEconicalBower(match_al,deliver_al);
 
     }
     public static ArrayList<MatchesModel> enterTheDatafromMatch()
     {
         String path ="/home/shashi/IdeaProjects/IplProject2/src/IplProjectPackage/matches.csv";
         String line="";
-        int f=0;
+
         ArrayList<MatchesModel> al_match= new ArrayList<>();
         try
         {
@@ -61,9 +64,6 @@ public class Main
 
 
 
-
-
-
             }
 
         }
@@ -73,12 +73,12 @@ public class Main
         }
         return al_match;
     }
-    public static void enterTheDatafromDeliveries()
+    public static ArrayList<DeliveriesModel> enterTheDatafromDeliveries()
     {
         String path1 ="/home/shashi/IdeaProjects/IplProject2/src/IplProjectPackage/deliveries.csv";
         String line="";
 
-
+         ArrayList<DeliveriesModel> delivery_al = new ArrayList<>();
         try
         {
             BufferedReader br = new BufferedReader(new FileReader(path1));
@@ -86,8 +86,9 @@ public class Main
             while((line=br.readLine())!=null)
             {
 
+               DeliveriesModel dm= new DeliveriesModel();
                 String[] values=line.split(",");
-                dm.setMatch_id(values[0]);
+                dm.setDel_match_idMatch_id(values[0]);
                 dm.setInnings(values[1]);
                 dm.setBatting_teams(values[2]);
                 dm.setBatting_teams(values[3]);
@@ -98,8 +99,7 @@ public class Main
                 dm.setBowler(values[8]);
                 dm.setExtra_runs(values[16]);
                 dm.setTotal_runs(values[17]);
-
-
+                delivery_al.add(dm);
 
 
             }
@@ -109,5 +109,6 @@ public class Main
             e.printStackTrace();
         }
 
+        return delivery_al;
     }
 }

@@ -16,11 +16,11 @@ public class DeliveriesModel
     String extra_runs;
     String total_runs;
 
-    public String getMatch_id() {
+    public String getDel_match_idMatch_id() {
         return Del_match_id;
     }
 
-    public void setMatch_id(String match_id) {
+    public void setDel_match_idMatch_id(String match_id) {
         this.Del_match_id = match_id;
     }
 
