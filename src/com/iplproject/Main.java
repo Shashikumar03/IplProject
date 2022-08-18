@@ -55,25 +55,25 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader(path));
             br.readLine();
             while ((line = br.readLine()) != null) {
-                Match matche = new Match();
+                Match match = new Match();
                 String[] values = line.split(",");
-                matche.setMatchId(values[MATCH_ID]);
-                matche.setSeason(values[SEASON]);
-                matche.setCity(values[CITY]);
-                matche.setDate(values[DATE]);
-                matche.setTeam1(values[TEAM1]);
-                matche.setTeam2(values[TEAM2]);
-                matche.setTossWinner(values[TOSS_WINNER]);
-                matche.setTossDecision(values[TOSS_DECISION]);
-                matche.setResult(values[RESULT]);
-                matche.setDlApplied(values[DL_APPLIED]);
-                matche.setWinner(values[WINNER]);
-                matche.setWinByRuns(values[WIN_BY_RUNS]);
-                matche.setWinByWickets(values[WIN_BY_WICKET]);
-                matche.setPlayerOfMatch(values[PLAYER_OF_THE_MATCH]);
-                matche.setVenue(values[VENUE]);
+                match.setMatchId(values[MATCH_ID]);
+                match.setSeason(values[SEASON]);
+                match.setCity(values[CITY]);
+                match.setDate(values[DATE]);
+                match.setTeam1(values[TEAM1]);
+                match.setTeam2(values[TEAM2]);
+                match.setTossWinner(values[TOSS_WINNER]);
+                match.setTossDecision(values[TOSS_DECISION]);
+                match.setResult(values[RESULT]);
+                match.setDlApplied(values[DL_APPLIED]);
+                match.setWinner(values[WINNER]);
+                match.setWinByRuns(values[WIN_BY_RUNS]);
+                match.setWinByWickets(values[WIN_BY_WICKET]);
+                match.setPlayerOfMatch(values[PLAYER_OF_THE_MATCH]);
+                match.setVenue(values[VENUE]);
 
-                matchList.add(matche);
+                matchList.add(match);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -175,9 +175,9 @@ public class Main {
             for (Delivery delivery : deliveryArrayList) {
                 if (match.getMatchId().equals(delivery.getDelMatchId()) && match.getSeason().equals("2015")) {
                     if (totalRunsHm.containsKey(delivery.getBowler())) {
-                        int c = totalRunsHm.get(delivery.getBowler());
-                        totalRunsHm.put(delivery.getBowler(), c + (Integer.parseInt(delivery.getTotalRuns())));
-                        totalBallHm.put(delivery.getBowler(), c + 1);
+                        int count = totalRunsHm.get(delivery.getBowler());
+                        totalRunsHm.put(delivery.getBowler(), count + (Integer.parseInt(delivery.getTotalRuns())));
+                        totalBallHm.put(delivery.getBowler(), count + 1);
 
                     } else {
                         totalRunsHm.put(delivery.getBowler(), Integer.parseInt(delivery.getTotalRuns()));
