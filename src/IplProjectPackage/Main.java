@@ -6,6 +6,32 @@ import java.util.ArrayList;
 
 public class Main
 {
+    public static final int MATCH_ID = 0;
+    public static final int SEASON = 1;
+    public static final int CITY = 2;
+    public static final int DATE = 3;
+    public static final int TEAM1 = 4;
+    public static final int TEAM2 = 5;
+    public static final int TOSS_WINNER = 6;
+    public static final int TOSS_DECISION = 7;
+    public static final int RESULT = 8;
+    public static final int DL_APPLIED = 9;
+    public static final int WINNER = 10;
+    public static final int WIN_BY_RUNS = 11;
+    public static final int WIN_BY_WICKET = 12;
+    public static final int PLAYER_OF_THE_MATCH = 13;
+    public static final int VENUE = 14;
+    public static final int DEL_MATCH_ID = 0;
+    public static final int INNINGS = 1;
+    public static final int BATTING_TEAM = 2;
+    public static final int BOWLING_TEAM = 3;
+    public static final int OVER = 4;
+    public static final int BALLS = 5;
+    public static final int BATSMAN = 6;
+    public static final int NON_STRIKER = 7;
+    public static final int BOWLER = 8;
+    public static final int EXTRA_RUNS = 16;
+    public static final int TOTAL_RUNS = 17;
     //static MatchesModel matchesModel= new MatchesModel();
 
     //static DeliveriesModel deliveryModel= new DeliveriesModel();
@@ -13,18 +39,16 @@ public class Main
     {
 
         ArrayList<MatchesModel> match_al= enterTheDatafromMatch();
+        ArrayList<DeliveriesModel> deliver_al=enterTheDatafromDeliveries();
+
         Question1 q1= new Question1();
         q1.totalMatchPalyed(match_al);
-
-
+        
         Question2 q2= new Question2();
         q2.totalMatchWon(match_al);
-
-
-
-        ArrayList<DeliveriesModel> deliver_al=enterTheDatafromDeliveries();
+        
         Question3 q3= new Question3();
-        q3.ExtraRuns(match_al, deliver_al);
+       q3.ExtraRuns(match_al, deliver_al);
 
         Question4 q4=new Question4();
         q4.topEconicalBower(match_al,deliver_al);
@@ -46,25 +70,25 @@ public class Main
             br.readLine();
             while((line=br.readLine())!=null)
             {
-                MatchesModel mm= new MatchesModel();
+                MatchesModel matchesModel= new MatchesModel();
                 String[] values=line.split(",");
-                mm.setMatch_id(values[0]);
-                mm.setSeason(values[1]);
-                mm.setCity(values[2]);
-                mm.setDate(values[3]);
-                mm.setTeam1(values[4]);
-                mm.setTeam2(values[5]);
-                mm.setToss_winner(values[6]);
-                mm.setToss_decision(values[7]);
-                mm.setResult(values[8]);
-                mm.setDl_applied(values[9]);
-                mm.setWinner(values[10]);
-                mm.setWin_by_runs(values[11]);
-                mm.setWin_by_wickets(values[12]);
-                mm.setPlayer_of_match(values[13]);
-                mm.setVenue(values[14]);
+                matchesModel.setMatch_id(values[MATCH_ID]);
+                matchesModel.setSeason(values[SEASON]);
+                matchesModel.setCity(values[Main.CITY]);
+                matchesModel.setDate(values[DATE]);
+                matchesModel.setTeam1(values[TEAM1]);
+                matchesModel.setTeam2(values[TEAM2]);
+                matchesModel.setToss_winner(values[TOSS_WINNER]);
+                matchesModel.setToss_decision(values[TOSS_DECISION]);
+                matchesModel.setResult(values[RESULT]);
+                matchesModel.setDl_applied(values[DL_APPLIED]);
+                matchesModel.setWinner(values[WINNER]);
+                matchesModel.setWin_by_runs(values[WIN_BY_RUNS]);
+                matchesModel.setWin_by_wickets(values[WIN_BY_WICKET]);
+                matchesModel.setPlayer_of_match(values[PLAYER_OF_THE_MATCH]);
+                matchesModel.setVenue(values[VENUE]);
 
-                al_match.add(mm);
+                al_match.add(matchesModel);
 
 
 
@@ -92,20 +116,20 @@ public class Main
             while((line=br.readLine())!=null)
             {
 
-               DeliveriesModel dm= new DeliveriesModel();
+               DeliveriesModel deliveryModel= new DeliveriesModel();
                 String[] values=line.split(",");
-                dm.setDel_match_idMatch_id(values[0]);
-                dm.setInnings(values[1]);
-                dm.setBatting_teams(values[2]);
-                dm.setBatting_teams(values[3]);
-                dm.setOver(values[4]);
-                dm.setBall(values[5]);
-                dm.setBatsman(values[6]);
-                dm.setNon_striker(values[7]);
-                dm.setBowler(values[8]);
-                dm.setExtra_runs(values[16]);
-                dm.setTotal_runs(values[17]);
-                delivery_al.add(dm);
+                deliveryModel.setDel_match_idMatch_id(values[DEL_MATCH_ID]);
+                deliveryModel.setInnings(values[INNINGS]);
+                deliveryModel.setBatting_teams(values[BATTING_TEAM]);
+                deliveryModel.setBowling_teams(values[BOWLING_TEAM]);
+                deliveryModel.setOver(values[OVER]);
+                deliveryModel.setBall(values[BALLS]);
+                deliveryModel.setBatsman(values[BATSMAN]);
+                deliveryModel.setNon_striker(values[NON_STRIKER]);
+                deliveryModel.setBowler(values[BOWLER]);
+                deliveryModel.setExtra_runs(values[EXTRA_RUNS]);
+                deliveryModel.setTotal_runs(values[TOTAL_RUNS]);
+                delivery_al.add(deliveryModel);
 
 
             }
