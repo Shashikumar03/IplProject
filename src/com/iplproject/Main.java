@@ -89,20 +89,20 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader(path1));
             br.readLine();
             while ((line = br.readLine()) != null) {
-                Delivery deliveryModel = new Delivery();
+                Delivery delivery = new Delivery();
                 String[] values = line.split(",");
-                deliveryModel.setDelMatchId(values[DEL_MATCH_ID]);
-                deliveryModel.setInnings(values[INNINGS]);
-                deliveryModel.setBattingTeams(values[BATTING_TEAM]);
-                deliveryModel.setBowlingTeams(values[BOWLING_TEAM]);
-                deliveryModel.setOver(values[OVER]);
-                deliveryModel.setBall(values[BALLS]);
-                deliveryModel.setBatsman(values[BATSMAN]);
-                deliveryModel.setNonStriker(values[NON_STRIKER]);
-                deliveryModel.setBowler(values[BOWLER]);
-                deliveryModel.setExtraRuns(values[EXTRA_RUNS]);
-                deliveryModel.setTotalRuns(values[TOTAL_RUNS]);
-                deliveryDataList.add(deliveryModel);
+                delivery.setDelMatchId(values[DEL_MATCH_ID]);
+                delivery.setInnings(values[INNINGS]);
+                delivery.setBattingTeams(values[BATTING_TEAM]);
+                delivery.setBowlingTeams(values[BOWLING_TEAM]);
+                delivery.setOver(values[OVER]);
+                delivery.setBall(values[BALLS]);
+                delivery.setBatsman(values[BATSMAN]);
+                delivery.setNonStriker(values[NON_STRIKER]);
+                delivery.setBowler(values[BOWLER]);
+                delivery.setExtraRuns(values[EXTRA_RUNS]);
+                delivery.setTotalRuns(values[TOTAL_RUNS]);
+                deliveryDataList.add(delivery);
             }
         } catch (Exception e) {
             e.printStackTrace();
